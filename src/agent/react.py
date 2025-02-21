@@ -52,4 +52,7 @@ def main():
     response = agent.invoke({"messages": "What is Current time? Also provide Hasnain's information"})
     for message in response['messages']:
         message.pretty_print()
+        with open("response.txt", "a") as f:
+            f.write(message.content)
+            print("Response saved to response.txt")
 
